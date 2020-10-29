@@ -11,7 +11,7 @@ open System.Threading
 module GoogleCalendar =
 
     let private scopes = [| CalendarService.Scope.CalendarReadonly |]
-    let private credsFile = @"c:\dev\config\google-calendar-credentials.json"
+    let private credsFile = @"path\to\your\calendar\credentials.json"
     let private credPath = "token.json"
 
     let private Authenticate() =
