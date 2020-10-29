@@ -32,7 +32,7 @@ module GoogleCalendar =
         request.TimeMin <- Nullable DateTime.Now
         request.ShowDeleted <- Nullable false
         request.SingleEvents <- Nullable true
-        request.MaxResults <- Nullable 100
+        request.MaxResults <- Nullable 10
         request.OrderBy <- Nullable EventsResource.ListRequest.OrderByEnum.StartTime
         request
 
@@ -43,9 +43,7 @@ module GoogleCalendar =
             |> Seq.toList
             |> function
             | [] -> None
-            | list ->
-                list |> Seq.iter (fun event -> printfn "%s" event.Summary)
-                Some list
+            | list -> Some list
         with ex -> failwith ex.Message
 
     let GetEventList() =
