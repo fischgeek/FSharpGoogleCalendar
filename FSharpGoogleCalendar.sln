@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharpGoogleCalendar", "FSharpGoogleCalendar\FSharpGoogleCalendar.fsproj", "{9C9AA03C-B9C6-481A-8D5D-D976F622ED9A}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharpGoogleCalendarTest", "FSharpGoogleCalendarTest\FSharpGoogleCalendarTest.fsproj", "{DA54985C-E34C-4B9D-BAA3-39DEE3324A08}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C9AA03C-B9C6-481A-8D5D-D976F622ED9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C9AA03C-B9C6-481A-8D5D-D976F622ED9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C9AA03C-B9C6-481A-8D5D-D976F622ED9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C9AA03C-B9C6-481A-8D5D-D976F622ED9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA54985C-E34C-4B9D-BAA3-39DEE3324A08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA54985C-E34C-4B9D-BAA3-39DEE3324A08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA54985C-E34C-4B9D-BAA3-39DEE3324A08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA54985C-E34C-4B9D-BAA3-39DEE3324A08}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {81695983-279F-44A5-8716-E01D603A4110}
+	EndGlobalSection
+EndGlobal
