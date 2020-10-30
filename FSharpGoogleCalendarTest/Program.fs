@@ -16,7 +16,7 @@ module Main =
                 printfn "%s" event.Location
             )
         | None -> 
-            printfn "Something went wrong."
+            printfn "No events."
             ()
         Console.ReadLine() |> ignore
         0

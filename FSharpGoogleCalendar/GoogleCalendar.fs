@@ -11,7 +11,9 @@ open System.Threading
 module GoogleCalendar =
 
     let private scopes = [| CalendarService.Scope.CalendarReadonly |]
-    let private credsFile = @"path\to\your\calendar\credentials.json"
+
+    // https://developers.google.com/calendar/quickstart/dotnet
+    let private credsFile = @"c:\dev\config\google-calendar-credentials.json"
     let private credPath = "token.json"
 
     let private Authenticate() =
@@ -22,14 +24,15 @@ module GoogleCalendar =
         credential
 
     let private CreateGoogleCalendarService credential =
-        let mutable baseClientService = new BaseClientService.Initializer()
+        let baseClientService = new BaseClientService.Initializer()
         baseClientService.HttpClientInitializer <- credential
         baseClientService.ApplicationName <- "Application Name"
         new CalendarService(baseClientService)
 
-    let private CreateRequest service =
-        let mutable request = new EventsResource.ListRequest(service, "primary")
-        request.TimeMin <- Nullable DateTime.Now
+    let private CreateRequest minDate maxDate service =
+        let request = new EventsResource.ListRequest(service, "primary")
+        request.TimeMin <- Nullable minDate
+        request.TimeMax <- Nullable maxDate
         request.ShowDeleted <- Nullable false
         request.SingleEvents <- Nullable true
         request.MaxResults <- Nullable 10
@@ -47,8 +50,10 @@ module GoogleCalendar =
         with ex -> failwith ex.Message
 
     let GetEventList() =
+        let startDate = DateTime.Now
+        let endDate = DateTime.Now
         Authenticate()
         |> CreateGoogleCalendarService
-        |> CreateRequest
+        |> CreateRequest startDate endDate
         |> GetEvents
     ()
